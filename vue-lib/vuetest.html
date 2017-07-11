@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="bootstrap.css">
+	<script src="vue/vue2.js"></script>
+	<script>
+		window.onload = function(){
+			Vue.component("counter",{
+				template: "#cen",
+			})
+			
+			new Vue({
+				el: "#box",
+			})
+		}
+	</script>
+</head>
+<body>
+	<div id="box">
+		<counter></counter>
+		<counter></counter>
+	</div>
+	<template id="cen">
+		<h1>123</h1>
+		<button>submit</button>
+	</template>
+</body>
+</html>

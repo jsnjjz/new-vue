@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="vue2.js"></script>
+	<script>
+		window.onload = function(){
+			new Vue({                     //创建一个vue实例
+				el: "#box",                 //为实例提供挂载元素
+				data: {                     //data对象
+					message: "hello world!"
+				}
+			})
+		}
+	</script>
+</head>
+<body>
+	<div id="box">
+		<p>{{message}}</p>                  <!-- 输出内容 -->
+		<input type="text" v-model="message">
+	</div>
+</body>
+</html>

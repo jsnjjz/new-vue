@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="vue/vue2.js"></script>
+	<script>
+		window.onload = function(){
+			new Vue({
+				el: "#box",
+				data: {
+					message: "",
+				}
+			})
+		}
+	</script>
+</head>
+<body>
+	<div id="box">
+		<form action="www.baidu.com">
+			<p v-show="!message">dhajsfkgldfnhbmd</p>
+			<textarea name="" id="" cols="30" rows="10" v-model="message"></textarea>
+			<button v-show="message">发布</button>
+		</form>
+	</div>
+</body>
+</html>

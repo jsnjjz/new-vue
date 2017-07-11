@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="new/vue.js"></script>
+	<script>
+		window.onload = function(){
+			new Vue({
+				el: ".wrap",
+				data: {
+					items: [
+						{"name": "week"},
+						{"age": "22"},
+						{"sex": "boy"}
+					]
+				}
+			})
+		}
+	</script>
+</head>
+<body>
+	<div class="wrap">
+		<ul>
+			<li v-for="item in items">{{item.name}}</li>
+		</ul>
+	</div>
+</body>
+</html>

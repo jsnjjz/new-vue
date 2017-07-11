@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="vue2.js"></script>
+	<script>
+		window.onload = function(){
+			new Vue({
+				el: "#box",
+				data: {
+					message: "",
+				}
+			})
+		}
+	</script>
+</head>
+<body>
+	<div id="box">
+		<form action="">
+			<p v-if="!message">您还没有输入文字！</p>      <!--此时v-if的值为true-->
+			<textarea v-model="message"></textarea>
+			<br>
+			<button v-show="message">Send Message</button>  <!--此时v-show的值为false-->
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#box div{
+			width: 200px;
+			height: 200px;
+			background: yellowgreen;
+		}
+	</style>
+	<script src="vue2.js"></script>
+	<script>
+		window.onload = function(){
+			new Vue({
+				el: "#box",
+				data: {
+					message: "0.0",
+					send: true,
+				},
+				methods: {
+					change: function (){
+						this.send=!this.send
+					}
+				}
+			})
+		}
+	</script>
+</head>
+<body>
+	<div id="box">
+		<input type="text" v-model="message">
+		<input type="text" v-model="message">
+		<button @click="change">按钮</button>
+		<div v-show="send">{{message}}</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="bootstrap.css">
+	<script src="vue/vue2.js"></script>
+	<script>
+		window.onload = function(){
+			Vue.component ("counter",{
+				template: "#temp",
+				props: ["heading","color"],
+				data: function (){
+					return {coun : 0}
+				}
+			})
+			
+			new Vue({
+				el: "#box",
+			
+			})
+		
+		}
+	</script>
+</head>
+<body>
+	<div id="box">
+		<counter heading="links" color="red"></counter>   <!--自定义的html标签-->
+		<counter heading="dislinks" color="green"></counter>   <!--自定义的html标签-->
+	</div>
+	<template id="temp">
+		<h1>{{heading}}</h1>
+		<button class="btn btn-primary" @click="coun += 1" style="background:{{color}}">submit{{coun}}</button>
+	</template>
+</body>
+</html>

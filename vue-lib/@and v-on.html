@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="bootstrap.css">
+	<script src="vue2.js"></script>
+	<script>
+		window.onload = function(){
+			new Vue({
+				el: "#box",
+				data: {
+					count: 0,
+				},
+				methods: {
+					show: function(){
+						this.count += 1;
+					}
+				}
+			})
+		}
+	</script>
+</head>
+<body>
+	<div id="box">
+		<form action="http://www.baidu.com">
+			<button class="btn btn-primary" @click.prevent="show">submit{{count}}</button>
+		</form>
+	</div>
+</body>
+</html>

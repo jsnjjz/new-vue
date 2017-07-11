@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+			<meta charset="UTF-8">
+			<title></title>
+			<script src="vue.js"></script>
+			<script>
+				window.onload = function(){
+					var vm = new Vue({
+						el: ".div1",
+						data: {
+							message: "12345",
+						}
+					})
+				}
+			</script>
+    </head>
+    <body>
+      <div class="div1">
+      	<input type="text" v-model="message">
+      	<div>
+      		{{message}}
+      	</div>
+      </div>
+    </body>
+</html>

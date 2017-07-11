@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.show {
+			width: 200px;
+			height: 200px;
+			background: yellowgreen;
+		}
+	</style>
+	<script src="vue2.js"></script>
+	<script>
+		window.onload = function(){
+			new Vue({
+				el: "#box",
+				data: {
+					message: "111",
+					send: true,
+				},
+				methods: {
+					change: function (){
+						this.send = !this.send
+					}
+				}
+			})
+		}
+	</script>
+</head>
+<body>
+	<div id="box">
+		<input type="text" v-model="message">
+		<input type="text"  v-bind:placeholder="message">
+		<br>
+		<button v-on:click="change">显示隐藏</button>
+		<div class="show" v-show="send">{{message}}</div>
+	</div>
+</body>
+</html>

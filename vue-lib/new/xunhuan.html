@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		li {
+			list-style: none;
+		}
+	</style>
+	<script src="vue.js"></script>
+	<script>
+		window.onload = function(){
+			new Vue({
+				el: "#wrap",
+				data: {
+					message: null,
+					items: [
+						"apple","banna","peach",
+					]
+				},
+				methods: {
+					add: function (){
+						this.items.push(this.message);
+					}
+				}
+			})
+		}
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<input type="text" v-model="message">
+		<input type="button" v-on:click="add" value="添加">
+		<ul>
+			<li v-for="(cen,index) in items">{{index+1}}.{{cen}}</li>
+		</ul>
+	</div>
+</body>
+</html>

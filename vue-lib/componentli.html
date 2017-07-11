@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		li {
+			list-style: none;
+		}
+	</style>
+	<script src="new/vue.js"></script>
+	<script>
+		window.onload = function(){
+			Vue.component("items-com",{
+				template: '<li><span>{{id}}、</span>{{item}}</li>',
+				props: ['item','id'],
+			})
+			new Vue({
+				el: "#box",
+				data: {
+					items: [
+						"apple","banna","orange"
+					]
+				}
+			})
+		}
+	</script>
+</head>
+<body>
+	<div id="box">
+		<ul>
+				<items-com v-for="(item,index) in items" v-bind:item="item" v-bind:id="index">
+			</items-com> 
+		</ul>
+<!--
+		<ol>
+			<items-com v-for="item in items" v-bind:item="item">
+
+			</items-com> 
+		</ol>
+-->
+	</div>
+
+	
+	
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#box {
+			width: 200px;
+			height: 200px;
+			background: yellowgreen;
+		}
+	</style>
+	<script src="vue/vue.js"></script>
+	<script>
+		window.onload = function(){
+			new Vue({
+				el: ".box",
+				data: {
+					message: true,
+				},
+//				methods: {
+//					change: function (){
+//						this.message = !this.message
+//					}
+//				}
+			})
+			
+		}
+	</script>
+</head>
+<body>
+	<div class="box">
+		<button v-on:click="message = !message">切换</button>
+		<div id="box" v-show="message"></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		li {
+			list-style: none;
+		}
+	</style>
+	<script src="new/vue.js"></script>
+	<script>
+		window.onload = function(){
+			Vue.component("ilist",{
+				props: ["item","id"],     //看成一个  形参
+				template: "<li><span>{{id}}、</span>{{item}}</li>",
+			}),
+			new Vue({
+				el: "#wrap",
+				data: {
+					items: [
+						"banner","orange","apple"
+					]
+				}
+			})
+		}
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<ul>
+			<ilist v-for="(item,index) in items" v-bind:item="item" v-bind:id="index"></ilist>
+		</ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="vue2.js"></script>
+	<script>
+		window.onload = function(){
+			new Vue({
+				el: "#box",
+				data: {
+					message: "hello world!"
+				},
+				methods: {
+					change: function (){
+						this.message = this.message.split("").reverse("").join("")
+					}
+				}
+			})
+		}
+	</script>
+</head>
+<body>
+	<div id="box">
+		<p>{{message}}</p>
+		<button v-on:click="change">change</button>
+	</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#box {
+			width: 200px;
+			height: 200px;
+			background: yellowgreen;
+		}
+		.active {
+			width: 200px;
+			height: 200px;
+			background: hotpink;
+		}
+	</style>
+	<script src="vue/vue.js"></script>
+	<script>
+		window.onload = function(){
+			new Vue({
+				el: ".box",
+				data: {
+					message: 9,
+				},
+//				methods: {
+//					change: function (){
+//						this.message = !this.message
+//					}
+//				}
+			})
+			
+		}
+	</script>
+</head>
+<body>
+	<div class="box">
+		<input type="number" v-model="message">
+		<div id="box" v-if="message > 5 ? true : false"></div>
+		<div id="cen" v-bind:class="{active:this.message >= 10}"></div>
+	</div>
+</body>
+</html>

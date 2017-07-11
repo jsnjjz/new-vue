@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="vue.js"></script>
+	<script>
+		window.onload = function(){
+//			var test = {
+//				message: "hhhh",
+//			}
+//			var test2 = {
+//				message: "jjjj",
+//			}
+//			
+//			var vm = new Vue({
+//				el: ".box",
+//				data: test2,
+//				      
+//			})
+			
+			
+			var vm = new Vue({
+				el: ".box",
+				data: {
+					message: "ffff",
+				}
+			})
+		}
+	</script>
+</head>
+<body>
+	<div class="box">
+		<input type="text" id="inp" v-model="message">
+		<div>
+			{{message}}
+		</div>
+	</div>
+</body>
+</html>

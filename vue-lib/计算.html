@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="vue/vue.js"></script>
+	<script>
+		window.onload = function(){
+			new Vue({
+				el: "#wrap",
+				data: {
+					message: "h e l l o !",
+				},
+				computed: {
+					changeMessage: function (){
+						return this.message.split('').reverse().join('-');
+					}
+				},
+				methods: {
+					messagell: function (){
+						this.message = this.message.split('').reverse().join('-')
+					}
+				}
+			})
+		}
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<input type="button" v-on:click="messagell" value="反转">
+		<input type="text" v-model="message">
+		<div>原始字符串：{{message}}</div>
+		<div>反转字符串：{{changeMessage}}</div>
+	</div>
+</body>
+</html>

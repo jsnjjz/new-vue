@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="vue/vue2.js"></script>
+	<script>
+		window.onload = function(){
+			new Vue({
+				el: "#box",
+				data: {
+					message: 0,
+				},
+				methods: {
+					fun: function(ev){             //定义一个函数
+						this.message += 1;
+						ev.preventDefault();         //阻止默认事件
+					}
+				}
+			})
+		}
+	</script>
+</head>
+<body>
+	<div id="box">
+		<form action="www.baidu.com" v-on:submit= "fun">
+			<button>提交{{message}}</button>
+		</form>
+	</div>
+</body>
+</html>

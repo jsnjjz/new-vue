@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="bootstrap.css">
+	<script src="vue2.js"></script>
+	<script>
+		window.onload = function(){
+			Vue.component("counter",{
+				props: ["item"],
+//				template: "#lista-complate",
+			})
+			new Vue({
+				el: "#wrap",
+				data: {
+					items: [
+						"banner","orange","apple"
+					]
+				}
+			})
+		}
+	</script>
+</head>
+<body>
+	<div id="wrap">
+<!--		<counter></counter>-->
+		<div v-for="item in items" v-bind:item="item">{{item}}</div>
+	</div>
+	<template id="lista-complate">
+<!--		<div v-for="item in items" v-bind:item="item">{{item}}</div>-->
+	</template>
+</body>
+</html>

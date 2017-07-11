@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box {
+			width: 200px;
+			height: 200px;
+			background: yellowgreen;
+		}
+	</style>
+	<script src="vue.js"></script>
+	<script>
+		window.onload = function(){
+			
+			new Vue({
+				el: "#wrap",
+				data: {
+					message: "123",
+					seen: true
+				},
+				methods: {
+					toggle: function (){
+						this.seen = !this.seen
+					}
+				}
+			})
+		}
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<p v-bind:title="message">{{message}}</p>
+		<input type="text" v-model="message">
+		<input type="text" v-model="message">
+		<button v-on:click="toggle">按钮</button>
+		<div class="box" v-if="seen">
+			
+		</div>
+	</div>
+</body>
+</html>

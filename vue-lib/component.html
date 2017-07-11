@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="vue/vue2.js"></script>
+	<script>
+		window.onload = function(){
+//			var Footer = Vue.extend({
+//					template: '<div>我是页脚组件</div>'
+//			})
+			
+				// 注册为全局组件
+			Vue.component('v-footer', {
+				template: '<div>我是页脚组件</div>'
+			})
+			
+			
+				// 创建根实例
+			new Vue({
+				el: '#app'
+			})
+
+		
+
+		
+		}
+	</script>
+</head>
+<body>
+	<div id="app">
+		<v-footer></v-footer> <!-- 加一个v前缀，跟原生的footer标签区别开来 -->
+	</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="vue2.js"></script>
+	<script>
+		window.onload = function(){
+			new Vue({
+				el: "#box",
+				data: {
+					wrap: [
+						{text: "dhsfmjkdfsjk"},
+						{text: "fhgjkjlk dfmsj,ng"},
+						{text: "efhrgjkjlk;mndf,nkg."}
+					]
+				}
+			})
+		}
+	</script>
+</head>
+<body>
+	<div id="box">
+		<ul>
+			<li v-for="cen in wrap">{{cen.text}}</li>
+		</ul>
+	</div>
+</body>
+</html>
